@@ -1,5 +1,5 @@
 // import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import Footer from "/src/components/footer.jsx";
 import Navigation from "/src/components/navigation.jsx";
 import About from "/src/pages/about.jsx";
@@ -32,7 +32,9 @@ function App() {
   <Router>
     <Navigation />
     <main>
+      
       <Routes>
+      <Route path="/" element={<Navigate to="/about" />} />
         <Route path="/about" element={<About />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/contact" element={<Contact />} />
