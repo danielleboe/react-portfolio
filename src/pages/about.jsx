@@ -3,7 +3,7 @@ import "../styles/about.css";
 
 const About = () => (
   <section>
-    <h2>About Me</h2>
+    <h1>About Me</h1>
     <img
       src="/public/assets/girl.jpeg"
       alt="Danielle Boenisch"
