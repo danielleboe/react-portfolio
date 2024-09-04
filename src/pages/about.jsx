@@ -10,14 +10,14 @@ const About = () => (
       id="author-photo"
     />
     <div id="aboutme-text">
-      <p >
+      <p>
         Results-driven Senior Product Manager with a proven track record of
         implementing innovative software applications and specializing in
         personalization and customer data management. Over 6 years of experience
         in product management leading CRM, Martech, data integrations,
         optimizing business operations, and increasing revenue through
         data-driven strategies.
-        <br />
+        <br /><br />
         My career began in marketing, specializing in marketing automation
         before moving into product management.
       </p>
@@ -31,14 +31,14 @@ const About = () => (
         Specialized in customer data automation. Specialized in CRM management
         and customer data management.
       </p>
-
+      <br />
       <h3>Data Integrations</h3>
       <p>
         Built an internal iPaaS and implemented integrations for multiple SaaS
         including Salesforce, Responsys, Genesys, Hubspot, Netsuite, Arrivy,
         Enerflo, internal SaaS
       </p>
-
+      <br />
       <h3>SaaS Implementations and Migrations</h3>
 
       <p>
