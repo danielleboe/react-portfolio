@@ -1,0 +1,49 @@
+.resume {
+    padding: 2rem;
+  }
+  
+  .resume h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .resume p {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .resume-link {
+    display: block;
+    text-align: center;
+    color: #007bff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin: 1rem 0;
+  }
+  
+  .resume-link:hover {
+    text-decoration: underline;
+  }
+  
+  .skills {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .skills h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .skills ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .skills li {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    text-align: center;
+  }
+  
