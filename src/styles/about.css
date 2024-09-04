@@ -1,0 +1,38 @@
+#author-photo {
+  max-width: 250px;
+  overflow:auto;
+
+}
+
+#contact-details {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  padding: 20px;
+  margin: 20px auto;
+  text-align: center;
+  line-height: 2;
+}
+
+
+#aboutme-text{
+    margin: 40px auto;
+    width: 50%;
+
+}
+
+
+#github-link,
+#linkedin-link {
+  text-decoration: none;
+  
+}
+#relevant-skills{
+    line-height:1.5;
+    margin: 40px auto;
+    width: 50%;
+    text-align:left;
+}
+
+h3{
+    line-height:.9;
+}

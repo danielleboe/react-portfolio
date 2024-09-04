@@ -1,6 +1,5 @@
-import React from "react";
+// import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Header from "/src/components/header.jsx";
 import Footer from "/src/components/footer.jsx";
 import Navigation from "/src/components/navigation.jsx";
 import About from "/src/pages/about.jsx";
@@ -32,7 +31,6 @@ function App() {
   return(
   <Router>
     <Navigation />
-    <Header />
     <main>
       <Routes>
         <Route path="/about" element={<About />} />

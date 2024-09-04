@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import '../styles/resume.css'; // Importing styles specific to the Resume component
 
 const Resume = () => {
@@ -7,7 +7,7 @@ const Resume = () => {
       <h2>Resume</h2>
       <p>Download my resume here:</p>
       <a
-        href="/public/assets/DanielleBoenischResume20240719-2.pdf" // Replace with the actual path to your resume
+        href="/assets/DanielleBoenischResume20240719-2.pdf" // Replace with the actual path to your resume
         download
         className="resume-link"
       >

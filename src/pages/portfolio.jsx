@@ -1,43 +1,44 @@
-import React from 'react';
+// import React from 'react';
 import Project from '../components/project.jsx'; // Importing the Project component
 import '../styles/portfolio.css'; // Importing styles specific to the Portfolio component
 
 const projects = [
   {
-    title: 'Project One',
-    image: '/path/to/project-one-image.jpg', // Replace with actual image path
-    deployedLink: 'https://deployed-link-one.com',
-    githubLink: 'https://github.com/yourusername/project-one',
+    title: 'CalorEase Calorie Tracker',
+    image: '/assets/CalorEase.png', // Replace with actual image path
+    deployedLink: 'https://danielleboe.github.io/NutritionTracker/',
+    githubLink: 'https://github.com/danielleboe/NutritionTracker',
   },
   {
-    title: 'Project Two',
-    image: '/path/to/project-two-image.jpg', // Replace with actual image path
-    deployedLink: 'https://deployed-link-two.com',
+    title: 'Blog Form',
+    image: '/assets/Create-New-Post.png', // Replace with actual image path
+    deployedLink: 'https://danielleboe.github.io/blogform/',
     githubLink: 'https://github.com/yourusername/project-two',
   },
   {
-    title: 'Project Three',
-    image: '/path/to/project-three-image.jpg', // Replace with actual image path
-    deployedLink: 'https://deployed-link-three.com',
-    githubLink: 'https://github.com/yourusername/project-three',
+    title: 'Kanban Task Board',
+    image: '/assets/taskboard-screenshot.png', // Replace with actual image path
+    deployedLink: 'https://danielleboe.github.io/taskboard/',
+    githubLink: 'https://github.com/danielleboe/taskboard',
   },
   {
-    title: 'Project Four',
-    image: '/path/to/project-four-image.jpg', // Replace with actual image path
-    deployedLink: 'https://deployed-link-four.com',
-    githubLink: 'https://github.com/yourusername/project-four',
+    title: 'Weather App',
+    image: '/assets/weatherapp.png', // Replace with actual image path
+    deployedLink: 'https://danielleboe.github.io/weatherapp/',
+    githubLink: 'https://github.com/danielleboe/weatherapp',
   },
   {
-    title: 'Project Five',
-    image: '/path/to/project-five-image.jpg', // Replace with actual image path
+    title: 'Blog',
+    image: '/assets/', // Replace with actual image path
     deployedLink: 'https://deployed-link-five.com',
-    githubLink: 'https://github.com/yourusername/project-five',
+    githubLink: 'https://github.com/danielleboe/new-blog',
   },
+  
   {
-    title: 'Project Six',
-    image: '/path/to/project-six-image.jpg', // Replace with actual image path
-    deployedLink: 'https://deployed-link-six.com',
-    githubLink: 'https://github.com/yourusername/project-six',
+    title: 'Notes App',
+    image: 'assets/notes-app.png', // Replace with actual image path
+    deployedLink: 'https://github.com/danielleboe/notesapp',
+    githubLink: 'https://note-app-ynb3.onrender.com/notes.html',
   },
 ];
 
