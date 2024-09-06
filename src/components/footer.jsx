@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import "../styles/footer.css"; // Importing styles specific to the footer component
 
 const Footer = () => {
@@ -20,6 +20,13 @@ const Footer = () => {
             rel="noopener noreferrer"
           >
             LinkedIn
+          </a>
+          <a
+            href="https://www.instagram.com/dboenisch/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Instagram
           </a>
         </div>
       </div>

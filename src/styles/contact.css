@@ -68,31 +68,3 @@
     }
   }
   /* code from index.css */
-  /* Contact Component */
-.contact-form {
-  display: flex;
-  flex-direction: column;
-}
-
-.contact-form .form-group {
-  margin-bottom: 1rem;
-}
-
-.contact-form input,
-.contact-form textarea {
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.contact-form button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-}
-
-.contact-form button:hover {
-  background-color: #0056b3;
-}

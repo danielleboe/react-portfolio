@@ -12,22 +12,22 @@
     color: #333;
   }
   
-  /* Header and Footer */
+  /* Header and Footer
   header {
     background-color: #333;
     color: #fff;
     padding: 1rem;
   }
-  
-  footer {
+   */
+  /* footer {
     background-color: #333;
     color: #fff;
     padding: 1rem;
     text-align: center;
-  }
+  } */
   
   /* Navigation */
-  nav {
+  /* nav {
     margin-bottom: 1rem;
   }
   
@@ -39,10 +39,10 @@
   
   nav a.active {
     font-weight: bold;
-  }
+  } */
   
   /* Layout */
-  .container {
+  /* .container {
     width: 80%;
     margin: 0 auto;
   }
@@ -51,7 +51,7 @@
     .container {
       width: 90%;
     }
-  }
+  } */
   
   form {
     display: flex;
