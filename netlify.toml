@@ -1,6 +1,7 @@
 [build]
+  base = "react-portfolio"
   command = "npm run build"
-  publish = "react-portfolio"
+  publish = "dist"
 
 [functions]
   directory = "netlify/functions"
