@@ -13,7 +13,7 @@ const projects = [
     title: 'Blog Form',
     image: '/assets/Create-New-Post.png', // Replace with actual image path
     deployedLink: 'https://danielleboe.github.io/blogform/',
-    githubLink: 'https://github.com/yourusername/project-two',
+    githubLink: 'https://github.com/blogform',
   },
   {
     title: 'Kanban Task Board',
@@ -29,16 +29,16 @@ const projects = [
   },
   {
     title: 'Blog',
-    image: '/assets/', // Replace with actual image path
-    deployedLink: 'https://deployed-link-five.com',
+    image: '/assets/blogpost.png', // Replace with actual image path
+    deployedLink: 'https://new-blog-86s0.onrender.com',
     githubLink: 'https://github.com/danielleboe/new-blog',
   },
   
   {
     title: 'Notes App',
     image: 'assets/notes-app.png', // Replace with actual image path
-    deployedLink: 'https://github.com/danielleboe/notesapp',
-    githubLink: 'https://note-app-ynb3.onrender.com/notes.html',
+    deployedLink: 'https://note-app-ynb3.onrender.com/notes.html',
+    githubLink: 'https://github.com/danielleboe/notesapp',
   },
 ];
 
