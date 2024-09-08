@@ -1,11 +1,11 @@
 [build]
-  functions = "backend/functions"  # Directory for Netlify functions
+  command = "npm install && npm run build"
+  publish = "dist"
 
-[build.environment]
-  NODE_VERSION = "16"              # Specify Node.js version if needed
+[functions]
+  directory = "netlify/functions"
 
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/:splat"
   status = 200
-  force = true
