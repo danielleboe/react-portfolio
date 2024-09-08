@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 5100;
 const uri = process.env.MONGODB_URI;
 
 // Debugging logs
-console.log('PORT:', PORT);
+console.log('PORT:', process.env.PORT);
 console.log('MongoDB URI:', uri);
 
 // Middleware setup

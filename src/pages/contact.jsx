@@ -43,7 +43,7 @@ const Contact = () => {
       return;
     }
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/contact`, {
+      const response = await fetch(`https://react-portfolio-ugck.onrender.com/api/contact`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
