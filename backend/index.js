@@ -4,27 +4,36 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 
 const app = express();
+console.log(`express++++++++++`);
+app.use(cors({origin: true}));
 
-// Middleware
+// Middleware q
 app.use(cors({
-  origin: 'http://localhost:5000',
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
+  origin: '*',
+  // methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  // allowedHeaders: ['Content-Type', 'Authorization'],
 }));
-console.log(`localhost front end`);
+console.log(`localhost front end__________`);
 // app.use(cors());
 app.use(bodyParser.json());
 console.log(`body parser`);
 // Database connection
 // mongoose.connect('mongodb+srv://danielleboenisch:redrose16@cluster0.mmr0k.mongodb.net/', {
+  const uri = "mongodb+srv://danielleboenisch:redrose16@cluster0.mmr0k.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+  const clientOptions = { serverApi: { version: '1', strict: true, deprecationErrors: true } };
+console.log('In Here ++++++++++++++++++++++++++1')
 
-mongoose.connect('mongodb+srv://danielleboenisch:redrose16@cluster0.mmr0k.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
+  mongoose.connect(uri, 
+  clientOptions
+//   {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+// }
+)
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.error('MongoDB connection error:', err));
   console.log(`db connection`);
+  console.log('In Here ++++++++++++++++++++++++++2')
 // Define Schema and Model
 const contactSchema = new mongoose.Schema({
   name: String,
@@ -39,8 +48,8 @@ app.post('/api/contact', async (req, res) => {
   const { name, email, message } = req.body;
   const newContact = new Contact({ name, email, message });
   console.log(`contact`, contactSchema);
-
-  try {
+console.log('New Contact +++++++++++++++++++', contactSchema);
+ try {
     await newContact.save();
     res.status(201).send('Message sent successfully');
   } catch (error) {
@@ -55,6 +64,6 @@ app.options('*', cors());
 
 
 // Start server
-app.listen(5000, () => {
-  console.log('Server is running on port 5000');
+app.listen(5100, () => {
+  console.log('Server is running on port 5100');
 });
