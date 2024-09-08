@@ -1,14 +1,16 @@
-import { useState } from "react";
+import { useState } from 'react';
 import '../styles/contact.css'; // Importing styles 
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
+    name: '',
+    email: '',
+    message: '',
   });
 
   const [errors, setErrors] = useState({});
+  const [statusMessage, setStatusMessage] = useState('');
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -17,19 +19,19 @@ const Contact = () => {
 
     setErrors({
       ...errors,
-      [e.target.name]: "",
+      [e.target.name]: '',
     });
   };
 
   const validate = () => {
     let formErrors = {};
-    if (!formData.name) formErrors.name = "Name is required";
+    if (!formData.name) formErrors.name = 'Name is required';
     if (!formData.email) {
-      formErrors.email = "Email is required";
+      formErrors.email = 'Email is required';
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      formErrors.email = "Invalid email format";
+      formErrors.email = 'Invalid email format';
     }
-    if (!formData.message) formErrors.message = "Message is required";
+    if (!formData.message) formErrors.message = 'Message is required';
     return formErrors;
   };
 
@@ -41,41 +43,39 @@ const Contact = () => {
       return;
     }
     try {
-      const response = await fetch("http://localhost:5100/api/contact", {
-        method: "POST",
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/contact`, {
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
       });
 
       if (response.ok) {
-        alert("Message sent successfully");
+        setStatusMessage('Message sent successfully');
         setFormData({
-          name: "",
-          email: "",
-          message: "",
+          name: '',
+          email: '',
+          message: '',
         });
       } else {
-        alert("There was an error sending the message.");
+        setStatusMessage('There was an error sending the message.');
       }
     } catch (error) {
-      console.error("Error sending message:", error);
-      alert("There was an error sending the message.");
+      console.error('Error sending message:', error);
+      setStatusMessage('There was an error sending the message.');
     }
   };
 
   return (
-<section className="contact-section">
-<div id="contact-headline"><h1>Contact Me</h1></div>
-<div className="contact-details">
-<strong>Email</strong> danielleboenisch@gmail.com<br/>
-<strong>Phone:</strong> 573-489-6938
+    <section className="contact-section">
+      <div id="contact-headline"><h1>Contact Me</h1></div>
+      <div className="contact-details">
+        <strong>Email</strong> danielleboenisch@gmail.com<br/>
+        <strong>Phone:</strong> 573-489-6938
+      </div>
 
-</div>
-
-    <form onSubmit={handleSubmit} className="contact-form">
-    
+      <form onSubmit={handleSubmit} className="contact-form">
         <label className="label">Name</label>
         <input
           type="text"
@@ -84,10 +84,8 @@ const Contact = () => {
           onChange={handleChange}
           onBlur={handleChange}
         />
-        {errors.name && <p style={{ color: "red" }}>{errors.name}</p>}
+        {errors.name && <p style={{ color: 'red' }}>{errors.name}</p>}
       
-
-    
         <label className="label">Email</label>
         <input
           type="email"
@@ -96,10 +94,8 @@ const Contact = () => {
           onChange={handleChange}
           onBlur={handleChange}
         />
-        {errors.email && <p style={{ color: "red" }}>{errors.email}</p>}
+        {errors.email && <p style={{ color: 'red' }}>{errors.email}</p>}
      
-
-    
         <label className="label">Message</label>
         <textarea
           name="message"
@@ -107,106 +103,13 @@ const Contact = () => {
           onChange={handleChange}
           onBlur={handleChange}
         />
-        {errors.message && <p style={{ color: "red" }}>{errors.message}</p>}
+        {errors.message && <p style={{ color: 'red' }}>{errors.message}</p>}
      
-
-      <button type="submit" id="messageButton">Send Message</button>
-    </form>
+        <button type="submit" id="messageButton">Send Message</button>
+      </form>
+      {statusMessage && <p>{statusMessage}</p>}
     </section>
   );
 };
 
 export default Contact;
-
-
-
-// const Contact = () => {
-//   const [formData, setFormData] = useState({
-//     name: '',
-//     email: '',
-//     message: ''
-//   });
-
-//   const [formErrors, setFormErrors] = useState({
-//     name: false,
-//     email: false,
-//     message: false
-//   });
-
-//   const handleChange = (e) => {
-//     const { name, value } = e.target;
-//     setFormData((prevData) => ({
-//       ...prevData,
-//       [name]: value
-//     }));
-//   };
-
-//   const validateForm = () => {
-//     const errors = {
-//       name: !formData.name,
-//       email: !formData.email || !/\S+@\S+\.\S+/.test(formData.email),
-//       message: !formData.message
-//     };
-//     setFormErrors(errors);
-//     return !Object.values(errors).includes(true);
-//   };
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     if (validateForm()) {
-//       // Handle form submission logic here
-//       console.log('Form data:', formData);
-//       // You might want to reset the form here
-//     }
-//   };
-
-//   return (
-//     <section>
-//       <h2>Contact Me</h2>
-//       <form onSubmit={handleSubmit}>
-//         <div className="form-group">
-//           <label htmlFor="name">Name:</label>
-//           <input
-//             type="text"
-//             id="name"
-//             name="name"
-//             value={formData.name}
-//             onChange={handleChange}
-//             required
-//           />
-//           {formErrors.name && <p className="error">Name is required</p>}
-//         </div>
-
-//         <div className="form-group">
-//           <label htmlFor="email">Email:</label>
-//           <input
-//             type="email"
-//             id="email"
-//             name="email"
-//             value={formData.email}
-//             onChange={handleChange}
-//             required
-//           />
-//           {formErrors.email && <p className="error">Valid email is required</p>}
-//         </div>
-
-//         <div className="form-group">
-//           <label htmlFor="message">Message:</label>
-//           <textarea
-//             id="message"
-//             name="message"
-//             value={formData.message}
-//             onChange={handleChange}
-//             required
-//           ></textarea>
-//           {formErrors.message && <p className="error">Message is required</p>}
-//         </div>
-
-//         <button type="submit">Send</button>
-//       </form>
-//     </section>
-//   );
-// };
-
-// export default Contact;
-
