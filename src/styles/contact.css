@@ -3,8 +3,9 @@
 /* Contact section container */
 .contact-section {
   padding: 50px 0;
-  background-color: #242424;
+  background-color: #f4f4f4;
   text-align: center;
+  color:black;
 }
 
 /* Contact form container */
@@ -14,7 +15,7 @@
   background-color: #ffffff;
   padding: 30px;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 3px 3px 5px rgba(0, 0, 0, 0.1);
   min-height: auto;
   text-align: left;
   
@@ -66,7 +67,7 @@
 .contact-details {
   margin-top: 30px;
   font-size: 16px;
-  color: white;
+  color: black;
   padding-bottom: 60px;
 
 }
