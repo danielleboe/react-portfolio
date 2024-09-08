@@ -1,11 +1,11 @@
 [build]
-  command = "npm run build"
-  publish = "build"
+  command = "npm install && npm run build"  # Install dependencies and build your app
+  publish = "dist"  # The directory where your frontend assets are output, usually 'build' or 'dist'
+
+[functions]
+  directory = "netlify/functions"  # Directory for Netlify functions
 
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/:splat"
   status = 200
-
-[functions]
-  directory = "netlify/functions"
