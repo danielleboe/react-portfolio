@@ -46,7 +46,7 @@ const Resume = () => {
             </li>
             <li>
               Designed and developed site using html/css, javascript,
-              handlebars, node, express, postgres
+              handlebars, Node.js, express, postgres
             </li>
           </ul>
         </div>
