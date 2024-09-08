@@ -2,38 +2,36 @@ import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import bodyParser from 'body-parser';
+import dotenv from 'dotenv';
+
+// Load environment variables from .env file
+dotenv.config();
 
 const app = express();
-console.log(`express++++++++++`);
-app.use(cors({origin: true}));
+const PORT = process.env.PORT || 5100;
+const uri = process.env.MONGODB_URI;
 
-// Middleware q
-app.use(cors({
-  origin: '*',
-  // methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  // allowedHeaders: ['Content-Type', 'Authorization'],
-}));
-console.log(`localhost front end__________`);
-// app.use(cors());
+// Debugging logs
+console.log('PORT:', PORT);
+console.log('MongoDB URI:', uri);
+
+// Middleware setup
+const corsOptions = process.env.NODE_ENV === 'production'
+  ? { origin: process.env.FRONTEND_URL }  // For production, use the specified frontend URL
+  : { origin: '*' };  // For local development, allow all origins
+
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
-console.log(`body parser`);
-// Database connection
-// mongoose.connect('mongodb+srv://danielleboenisch:redrose16@cluster0.mmr0k.mongodb.net/', {
-  const uri = "mongodb+srv://danielleboenisch:redrose16@cluster0.mmr0k.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
-  const clientOptions = { serverApi: { version: '1', strict: true, deprecationErrors: true } };
-console.log('In Here ++++++++++++++++++++++++++1')
 
-  mongoose.connect(uri, 
-  clientOptions
-//   {
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true,
-// }
-)
+// Database connection
+mongoose.connect(uri, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  serverApi: { version: '1', strict: true, deprecationErrors: true },
+})
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.error('MongoDB connection error:', err));
-  console.log(`db connection`);
-  console.log('In Here ++++++++++++++++++++++++++2')
+
 // Define Schema and Model
 const contactSchema = new mongoose.Schema({
   name: String,
@@ -42,14 +40,13 @@ const contactSchema = new mongoose.Schema({
 });
 
 const Contact = mongoose.model('Contact', contactSchema);
-console.log(`contact`, contactSchema);
+
 // Routes
 app.post('/api/contact', async (req, res) => {
   const { name, email, message } = req.body;
   const newContact = new Contact({ name, email, message });
-  console.log(`contact`, contactSchema);
-console.log('New Contact +++++++++++++++++++', contactSchema);
- try {
+
+  try {
     await newContact.save();
     res.status(201).send('Message sent successfully');
   } catch (error) {
@@ -58,12 +55,7 @@ console.log('New Contact +++++++++++++++++++', contactSchema);
   }
 });
 
-
-// Handle OPTIONS method
-app.options('*', cors());
-
-
 // Start server
-app.listen(5100, () => {
-  console.log('Server is running on port 5100');
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
