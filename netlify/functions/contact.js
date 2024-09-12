@@ -1,6 +1,10 @@
 import { MongoClient } from 'mongodb';
+import dotenv from 'dotenv';
 
-const client = new MongoClient(process.env.MONGODB_URI);
+// Load environment variables from .env file
+dotenv.config();
+
+const client = new MongoClient(import.meta.env.MONGODB_URI);
 
 export async function handler(event) {
   if (event.httpMethod === 'POST') {
