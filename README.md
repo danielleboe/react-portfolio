@@ -9,6 +9,8 @@ Currently, two official plugins are available:
 
 ## Description
 
+A user development portfolio with development examples.
+
 ### User Story
 - AS AN employer looking for candidates with experience building single-page applications
 - I WANT to view a potential employee's deployed React portfolio of work samples
@@ -40,3 +42,31 @@ Currently, two official plugins are available:
 - THEN I see a link to a downloadable resume and a list of the developer’s proficiencies
 - WHEN I view the footer
 - THEN I am presented with text or icon links to the developer’s GitHub and LinkedIn profiles, and their profile on a third platform (Stack Overflow, Twitter) 
+
+## Instructions
+- Clone
+- Install npm install
+- Build
+- Run backen: navigate to backend directory. Command: node index.js
+- Run application: navigate to root directory - react-portfolio. Command: npm run start (npm run dev in dev)
+
+
+## Screenshots
+
+-About Me
+![About Me](public/assets/Danielle-Boenisch-Portfolio-about.png)
+
+Resume
+![Resume](public/assets/Danielle-Boenisch-Portfolio.png)
+
+Portfolio
+![Portfolio](<public/assets/Screenshot 2024-09-14 at 2.11.33 PM.png>)
+
+![Contact](<public/assets/Screenshot 2024-09-14 at 2.11.52 PM.png>)
+
+
+## License
+
+## Author
+Danielle Boenisch
+Github
