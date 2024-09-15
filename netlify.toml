@@ -1,8 +1,7 @@
 [build]
   base = "react-portfolio"
   command = "npm run build"
-  publish = "dist"
-  publish = "public"  # This should be the directory where your static files are generated
+  publish = "public"
 
 [functions]
   directory = "netlify/functions"
