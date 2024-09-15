@@ -6,7 +6,6 @@ const About = () => (
     <h1>About Me</h1>
     <img
       src="/assets/Girl.png"
-      
       alt="Danielle Boenisch"
       id="author-photo"
     />
