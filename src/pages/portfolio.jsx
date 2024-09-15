@@ -13,7 +13,7 @@ const projects = [
     title: 'Blog Form',
     image: '/assets/Create-New-Post.png', // Replace with actual image path
     deployedLink: 'https://danielleboe.github.io/blogform/',
-    githubLink: 'https://github.com/blogform',
+    githubLink: 'https://github.com/danielleboe/blogform',
   },
   {
     title: 'Kanban Task Board',

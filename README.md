@@ -66,6 +66,7 @@ Portfolio
 
 
 ## License
+Danielle Boenisch
 
 ## Author
 Danielle Boenisch
