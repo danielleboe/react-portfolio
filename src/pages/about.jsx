@@ -5,7 +5,7 @@ const About = () => (
   <section>
     <h1>About Me</h1>
     <img
-      src="./public/assets/Girl.jpeg"
+      src="/assets/Girl.png"
       
       alt="Danielle Boenisch"
       id="author-photo"
